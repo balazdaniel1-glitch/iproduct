@@ -203,22 +203,52 @@ footer{
   color:white;
 }
 
-/* HERO */
-.hero{
-  background:linear-gradient(135deg,#111,#1f1f1f);
+/* HERO VIDEO */
+
+.hero-video{
+  position:relative;
+  height:70vh;
+  overflow:hidden;
+}
+
+.hero-video video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.7)
+  );
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   color:white;
-  padding:80px 40px;
   text-align:center;
 }
 
-.hero h1{
-  font-size:42px;
+.hero-overlay h1{
+  font-size:48px;
   margin-bottom:15px;
+  font-weight:700;
 }
 
-.hero p{
-  font-size:16px;
-  opacity:0.7;
+.hero-overlay p{
+  font-size:18px;
+  opacity:0.85;
+  letter-spacing:1px;
 }
 </style>
 </head>
@@ -235,8 +265,12 @@ footer{
     <a href="#">Herné PC</a>
   </nav>
 </header>
-<section class="hero">
-  <div class="hero-content">
+<section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay">
     <h1>Technológia novej generácie</h1>
     <p>Apple • Samsung • Xiaomi • Gaming</p>
   </div>
