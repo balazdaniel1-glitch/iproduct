@@ -16,29 +16,64 @@ body{
 
 /* HEADER */
 header{
-  background:#111;
-  color:white;
-  padding:15px 40px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:linear-gradient(90deg,#0f0f0f,#1a1a1a);
+  padding:18px 50px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  box-shadow:0 5px 25px rgba(0,0,0,0.3);
+  border-bottom:2px solid #e60023;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
 }
 
 .logo img{
-  height:35px;
+  height:38px;
+  transition:0.3s;
+}
+
+.logo img:hover{
+  transform:scale(1.1);
+}
+
+.logo strong{
+  font-size:18px;
+  letter-spacing:1px;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:25px;
-  font-weight:500;
+  margin-left:30px;
+  font-weight:600;
+  position:relative;
+  transition:0.3s;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  background:#e60023;
+  left:0;
+  bottom:-6px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#e60023;
+}
+
+nav a:hover::after{
+  width:100%;
 }
 
 /* LAYOUT */
@@ -178,7 +213,12 @@ footer{
     <a href="#">Herné PC</a>
   </nav>
 </header>
-
+<section class="hero">
+  <div class="hero-content">
+    <h1>Technológia novej generácie</h1>
+    <p>Apple • Samsung • Xiaomi • Gaming</p>
+  </div>
+</section>
 <div class="container">
 
   <div class="sidebar">
